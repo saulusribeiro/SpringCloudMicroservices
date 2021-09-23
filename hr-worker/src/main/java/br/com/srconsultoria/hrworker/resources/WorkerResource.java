@@ -16,38 +16,43 @@ import br.com.srconsultoria.hrworker.entities.Worker;
 import br.com.srconsultoria.hrworker.repositories.WorkerRepository;
 
 @RestController
-@RequestMapping(value="/workers")
+@RequestMapping(value = "/workers")
 public class WorkerResource {
-	
+
 	private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
-	
+
 	@Autowired
 	private Environment env;
-	
+
 	@Autowired
 	private WorkerRepository workerRepository;
-	
+
 	@GetMapping
-	public ResponseEntity<List<Worker>> findAll(){
-		
-		
+	public ResponseEntity<List<Worker>> findAll() {
+
 		List<Worker> list = workerRepository.findAll();
-		
+
 		return ResponseEntity.ok(list);
-		
+
 	}
-	
-	@GetMapping(value="/{id}")
-	public ResponseEntity<Worker> findById(@PathVariable Long id){
-		
+
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<Worker> findById(@PathVariable Long id) {
+
 		logger.info("PORT =" + env.getProperty("local.server.port"));
-				
+		
+		// Provocando Time Out
+		
+		//try {
+		//	Thread.sleep(3000L);
+		//} catch (InterruptedException e) {
+		//	e.printStackTrace();
+		//}
+		
 		Worker obj = workerRepository.findById(id).get();
-		
+
 		return ResponseEntity.ok(obj);
-		
-		
+
 	}
-	
 
 }
