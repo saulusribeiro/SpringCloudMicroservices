@@ -29,7 +29,7 @@ public class UserResource {
 		
 		// O atributo que se coloca ? é o @RequestParam
 		@GetMapping(value = "/search")
-		public ResponseEntity<User> findById(@RequestParam String email) {
+		public ResponseEntity<User> findByEmail(@RequestParam String email) {
 
 			User obj = UserRepository.findByEmail(email);
 
