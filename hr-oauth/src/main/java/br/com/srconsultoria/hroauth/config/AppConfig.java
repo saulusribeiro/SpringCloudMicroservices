@@ -7,10 +7,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
+//@RefreshScope
 @Configuration
 public class AppConfig {
 	
-	@Value("$jwt.secret")
+	@Value("${jwt.secret}")
 	private String jwtSecret;
 	
 	

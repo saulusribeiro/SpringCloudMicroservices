@@ -22,8 +22,7 @@ public class AppConfig implements CommandLineRunner{
 	public JwtAccessTokenConverter accessTokenConverter() {
 		
 		JwtAccessTokenConverter tokenConverter= new JwtAccessTokenConverter ();
-//		tokenConverter.setSigningKey(jwtSecret);
-		tokenConverter.setSigningKey("MY-SECRET-KEY");
+		tokenConverter.setSigningKey(jwtSecret);
 		
 
 		return tokenConverter;
