@@ -22,8 +22,8 @@ public class HrConfigServerApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("USERNAME = "+ userName);
-		System.out.println("PASSWORD = "+ passWord);
+	//	System.out.println("USERNAME = "+ userName);
+	//	System.out.println("PASSWORD = "+ passWord);
 			
 	}
 

@@ -36,7 +36,7 @@ public class AppConfig implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("JWTSECRET = "+ jwtSecret);
+	//	System.out.println("JWTSECRET = "+ jwtSecret);
 		
 	}
 
